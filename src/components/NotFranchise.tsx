@@ -133,8 +133,8 @@ export default function NotFranchise() {
                   <Check className="w-4 h-4" />
                 </div>
                 <div>
-                  <strong className="text-white block font-medium">Giữ lại 100% lợi nhuận hoạt động</strong>
-                  <span>Không phải chia % doanh thu hàng tháng. Không có phí Royalty hay phí quản lý thương hiệu.</span>
+                  <strong className="text-white block font-medium">Giữ lại 100% lợi nhuận hoạt động (Lợi nhuận ròng ~35%)</strong>
+                  <span>Không phải chia % doanh thu hàng tháng. Biên lợi nhuận ròng sau khi trừ hết chi phí vận hành (COGS, nhân sự, mặt bằng) đạt khoảng 35%.</span>
                 </div>
               </li>
 

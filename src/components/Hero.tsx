@@ -53,12 +53,12 @@ export default function Hero() {
               </div>
 
               <div className="p-4 rounded-xl bg-neutral-900/60 border border-neutral-800/80 backdrop-blur-sm flex items-start gap-3">
-                <div className="p-2 rounded-lg bg-red-500/10 text-red-400 border border-red-500/20">
+                <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
                   <TrendingUp className="w-5 h-5" />
                 </div>
                 <div>
                   <h4 className="text-xs uppercase font-mono text-amber-300 font-semibold">Số Liệu Vận Hành Thực</h4>
-                  <p className="text-xs text-neutral-400 mt-0.5">Chứng minh qua doanh thu thực tế hơn 1,056 tỷ VNĐ/tháng.</p>
+                  <p className="text-xs text-neutral-400 mt-0.5">Doanh thu &gt;1.056 tỷ VNĐ. Biên lợi nhuận ròng <span className="text-emerald-400 font-semibold">~35% sau chi phí</span>.</p>
                 </div>
               </div>
             </div>
@@ -124,23 +124,23 @@ export default function Hero() {
                 </div>
               </motion.div>
 
-              {/* OVERLAY KPI 2: Average Daily Performance */}
+              {/* OVERLAY KPI 2: Average Daily Performance & Net Profit */}
               <motion.div
                 initial={{ y: 20, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.5, delay: 0.7 }}
-                className="absolute bottom-6 left-6 glass-panel rounded-2xl p-4 shadow-2xl max-w-[260px] border border-neutral-700/80 font-mono"
+                className="absolute bottom-6 left-6 glass-panel rounded-2xl p-4 shadow-2xl max-w-[280px] border border-neutral-700/80 font-mono"
               >
                 <div className="flex items-center justify-between text-neutral-400 text-xs mb-1">
                   <span className="uppercase text-[10px]">Trung Bình / Ngày</span>
                   <span className="text-amber-400 font-semibold">33.0M VNĐ</span>
                 </div>
                 <div className="w-full bg-neutral-800 h-1.5 rounded-full overflow-hidden my-2">
-                  <div className="bg-gradient-to-r from-amber-500 to-amber-300 h-full w-[85%]" />
+                  <div className="bg-gradient-to-r from-amber-500 to-emerald-400 h-full w-[85%]" />
                 </div>
                 <div className="flex items-center justify-between text-[11px] text-neutral-300">
-                  <span>Ngày Đỉnh Điểm</span>
-                  <span className="text-white font-bold">61.5M VNĐ</span>
+                  <span>Lợi Nhuận Ròng</span>
+                  <span className="text-emerald-400 font-bold">~35% (Sau Chi Phí)</span>
                 </div>
               </motion.div>
             </div>

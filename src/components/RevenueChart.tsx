@@ -264,6 +264,13 @@ export default function RevenueChart() {
                   Với mức doanh thu ổn định trên 33 triệu/ngày, việc áp dụng hệ thống quy trình tiêu chuẩn giúp chủ đầu tư tự tin nhân rộng mô hình mà không sợ sụt giảm chất lượng.
                 </p>
               </div>
+
+              <div className="p-3.5 rounded-xl bg-gradient-to-r from-emerald-950/40 to-neutral-950 border border-emerald-500/30 space-y-1">
+                <strong className="text-emerald-400 block font-semibold">4. Biên lợi nhuận ròng sau chi phí khoảng 35%</strong>
+                <p className="text-neutral-300">
+                  Tối ưu hóa Food Cost ở mức ~35% và kiểm soát chi phí vận hành (OPEX) ở mức ~30%, đem lại biên lợi nhuận ròng hấp dẫn khoảng <span className="text-emerald-300 font-mono font-bold">35%</span> sau khi trừ hết 100% chi phí.
+                </p>
+              </div>
             </div>
           </div>
 

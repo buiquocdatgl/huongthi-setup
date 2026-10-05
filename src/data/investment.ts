@@ -53,13 +53,13 @@ export const benchmarkInvestmentData: SetupInvestmentSchema = {
 };
 
 export const benchmarkDailyCost: DailyOperatingCostSchema = {
-  ingredients: 11500000, // COGS ~35% of 33M
-  labor: 5500000, // Staff ~16.5%
-  rentAllocation: 2500000, // Rent ~7.5%
-  utilities: 1200000, // Water, power ~3.6%
-  marketing: 1000000, // Marketing ~3%
-  deliveryPlatform: 500000, // Platform ~1.5%
-  miscellaneous: 800000, // Misc ~2.4%
+  ingredients: 11550000, // COGS ~35% of 33M
+  labor: 4950000, // Staff ~15%
+  rentAllocation: 2310000, // Rent ~7%
+  utilities: 990000, // Water, power ~3%
+  marketing: 825000, // Marketing ~2.5%
+  deliveryPlatform: 413500, // Platform ~1.25%
+  miscellaneous: 413500, // Misc ~1.25%
 };
 
 export function calculateTotalInvestment(data: SetupInvestmentSchema): number | null {

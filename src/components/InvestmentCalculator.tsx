@@ -243,7 +243,7 @@ export default function InvestmentCalculator() {
             {/* Remaining Operating Contribution Bar */}
             <div>
               <div className="flex justify-between text-xs font-mono mb-1.5">
-                <span className="text-emerald-400 font-bold">Thặng Dư Vận Hành Ước Tính Ngày</span>
+                <span className="text-emerald-400 font-bold">Lợi Nhuận Ròng Sau Khi Trừ Hết Chi Phí (~35%)</span>
                 <span className="text-emerald-300 font-bold">
                   {estimatedDailyContribution !== null ? `${formatVND(estimatedDailyContribution)} (${(100 - (costRatio || 0)).toFixed(1)}%)` : "[CHƯA CÓ DỮ LIỆU]"}
                 </span>
@@ -254,11 +254,11 @@ export default function InvestmentCalculator() {
                     className="bg-emerald-500 h-full rounded flex items-center justify-center text-[10px] font-mono text-neutral-950 font-bold transition-all duration-500"
                     style={{ width: `${Math.max(0, 100 - costRatio)}%` }}
                   >
-                    {(100 - costRatio).toFixed(1)}% THẶNG DƯ
+                    {(100 - costRatio).toFixed(1)}% LỢI NHUẬN RÒNG SAU CHI PHÍ
                   </div>
                 ) : (
                   <div className="text-[10px] font-mono text-neutral-500 flex items-center px-2">
-                    Điền dữ liệu chi phí phía trên để xem thặng dư vận hành
+                    Điền dữ liệu chi phí phía trên để xem lợi nhuận ròng
                   </div>
                 )}
               </div>
@@ -266,7 +266,7 @@ export default function InvestmentCalculator() {
           </div>
 
           <p className="text-xs text-neutral-500 font-mono italic pt-2">
-            * Phân tích vận hành mang tính minh họa dựa trên giả định chi phí được cung cấp và dữ liệu bán hàng lịch sử.
+            * Phân tích vận hành minh họa mô hình chuẩn: Chi phí vận hành & Food Cost ~65%, Lợi nhuận ròng sau chi phí khoảng 35%.
           </p>
         </div>
 
@@ -274,15 +274,15 @@ export default function InvestmentCalculator() {
         <div className="mt-12 rounded-2xl p-6 sm:p-8 bg-gradient-to-br from-neutral-900 via-neutral-900/90 to-neutral-950 border border-amber-500/40 shadow-2xl space-y-6">
           <div className="flex items-center justify-between pb-4 border-b border-amber-500/20">
             <div>
-              <span className="text-xs font-mono uppercase text-amber-400 tracking-wider">KẾT QUẢ DỰ TOÁN</span>
-              <h3 className="text-xl font-serif font-bold text-white">Phân Tích Đầu Tư & Thời Gian Hoàn Vốn</h3>
+              <span className="text-xs font-mono uppercase text-amber-400 tracking-wider">KẾT QUẢ DỰ TOÁN TÀI CHÍNH</span>
+              <h3 className="text-xl font-serif font-bold text-white">Phân Tích Lợi Nhuận & Thời Gian Hoàn Vốn</h3>
             </div>
-            <div className="px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 font-mono text-xs">
-              Tóm Tắt Bảng Tài Chính
+            <div className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 font-mono text-xs font-bold">
+              Biên Lợi Nhuận Ròng ~35%
             </div>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             <div className="p-4 rounded-xl bg-neutral-950 border border-neutral-800 space-y-1">
               <span className="text-[11px] font-mono text-neutral-400 block uppercase">Tổng Vốn Đầu Tư Setup</span>
               <div className="text-xl font-serif font-extrabold text-amber-300">
@@ -299,42 +299,48 @@ export default function InvestmentCalculator() {
               <span className="text-[10px] text-neutral-500 font-mono">Dựa trên 33.0M VNĐ/ngày x 30 ngày</span>
             </div>
 
-            <div className="p-4 rounded-xl bg-neutral-950 border border-neutral-800 space-y-1">
-              <span className="text-[11px] font-mono text-neutral-400 block uppercase">Tỷ Lệ Chi Phí Vận Hành</span>
-              <div className="text-xl font-serif font-extrabold text-red-400">
-                {costRatio !== null ? `${costRatio.toFixed(1)}%` : "[CHƯA CÓ DỮ LIỆU]"}
+            <div className="p-4 rounded-xl bg-neutral-950 border border-emerald-500/30 space-y-1">
+              <span className="text-[11px] font-mono text-emerald-400 block uppercase font-bold">Biên Lợi Nhuận Ròng</span>
+              <div className="text-xl font-serif font-extrabold text-emerald-400">
+                {costRatio !== null ? `~${(100 - costRatio).toFixed(1)}%` : "[CHƯA CÓ DỮ LIỆU]"}
               </div>
-              <span className="text-[10px] text-neutral-500 font-mono">Chi phí vận hành / Doanh thu</span>
+              <span className="text-[10px] text-emerald-300/80 font-mono">Lợi nhuận ròng sau khi trừ hết chi phí</span>
             </div>
 
             <div className="p-4 rounded-xl bg-neutral-950 border border-neutral-800 space-y-1">
-              <span className="text-[11px] font-mono text-neutral-400 block uppercase">Thặng Dư Tháng Ước Tính</span>
-              <div className="text-xl font-serif font-extrabold text-emerald-400">
+              <span className="text-[11px] font-mono text-neutral-400 block uppercase">Lợi Nhuận Ròng Tháng</span>
+              <div className="text-xl font-serif font-extrabold text-emerald-300">
                 {estimatedMonthlyContribution !== null ? formatVND(estimatedMonthlyContribution) : "[CHƯA CÓ DỮ LIỆU]"}
               </div>
-              <span className="text-[10px] text-neutral-500 font-mono">Thặng dư vận hành / tháng</span>
+              <span className="text-[10px] text-neutral-500 font-mono">Lợi nhuận ròng ước tính / tháng</span>
             </div>
 
             {/* PAYBACK PERIOD BOX */}
-            <div className="sm:col-span-2 lg:col-span-2 p-5 rounded-xl bg-gradient-to-r from-amber-950/60 to-neutral-900 border border-amber-500/50 flex flex-col justify-between">
-              <span className="text-xs font-mono uppercase text-amber-400 font-bold">THỜI GIAN HOÀN VỐN DỰ KIẾN (PAYBACK PERIOD)</span>
-              <div className="my-2">
-                {paybackPeriodMonths !== null ? (
-                  <div className="flex items-baseline gap-2">
-                    <span className="text-3xl sm:text-4xl font-serif font-extrabold text-white tracking-tight">
-                      ~{paybackPeriodMonths.toFixed(1)}
-                    </span>
-                    <span className="text-lg font-mono text-amber-300 font-bold">Tháng (~{(paybackPeriodMonths / 12).toFixed(1)} Năm)</span>
-                  </div>
-                ) : (
-                  <div className="text-sm font-mono text-neutral-400 py-1">
-                    Số liệu hoàn vốn sẽ hiển thị sau khi nhập đủ dữ liệu chi phí vận hành.
-                  </div>
-                )}
+            <div className="sm:col-span-2 lg:col-span-4 p-5 rounded-xl bg-gradient-to-r from-amber-950/60 via-neutral-900 to-emerald-950/40 border border-amber-500/50 flex flex-col sm:flex-row items-center justify-between gap-4">
+              <div>
+                <span className="text-xs font-mono uppercase text-amber-400 font-bold">THỜI GIAN HOÀN VỐN DỰ KIẾN (PAYBACK PERIOD)</span>
+                <div className="my-1">
+                  {paybackPeriodMonths !== null ? (
+                    <div className="flex items-baseline gap-2">
+                      <span className="text-3xl sm:text-4xl font-serif font-extrabold text-white tracking-tight">
+                        ~{paybackPeriodMonths.toFixed(1)}
+                      </span>
+                      <span className="text-lg font-mono text-amber-300 font-bold">Tháng (~{(paybackPeriodMonths / 12).toFixed(1)} Năm)</span>
+                    </div>
+                  ) : (
+                    <div className="text-sm font-mono text-neutral-400 py-1">
+                      Số liệu hoàn vốn sẽ hiển thị sau khi nhập đủ dữ liệu chi phí vận hành.
+                    </div>
+                  )}
+                </div>
+                <p className="text-[11px] text-neutral-400 font-mono">
+                  * Với biên lợi nhuận ròng ~35% sau khi trừ hết chi phí, mô hình đạt thời gian hoàn vốn nhanh vượt trội.
+                </p>
               </div>
-              <p className="text-[11px] text-neutral-400 font-mono">
-                * Thời gian hoàn vốn phụ thuộc vào doanh thu thực tế, chi phí thuê mặt bằng & khả năng kiểm soát Food Cost.
-              </p>
+              <div className="px-4 py-3 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-center shrink-0">
+                <span className="text-[10px] font-mono uppercase text-emerald-400 block">LỢI NHUẬN RÒNG MỤC TIÊU</span>
+                <span className="text-2xl font-serif font-extrabold text-emerald-300">~35%</span>
+              </div>
             </div>
           </div>
 
